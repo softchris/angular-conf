@@ -1,0 +1,21 @@
+<div class="logo">
+  <img src="/assets/logo-monochrome.png" alt="">
+</div>
+<div class="menu-container">
+  <div *ngFor="let item of items" class="item">
+    {{ item }}
+  </div>
+</div>
+
+<mat-menu #appMenu="matMenu">
+  <button *ngFor="let item of items" mat-menu-item>{{item}}</button>
+</mat-menu>
+
+<button mat-icon-button [matMenuTriggerFor]="appMenu">
+  <mat-icon>more_vert</mat-icon>
+</button>
+
+
+<div class="speaker-container">
+  <app-speaker *ngFor="let speaker of speakers" [speaker]="speaker"></app-speaker>
+</div>
